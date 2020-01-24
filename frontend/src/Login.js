@@ -49,8 +49,8 @@ class Login extends React.Component {
         return (
             <form onSubmit={this.handleClick}>
                 <h1>Login</h1>
-                <input type="text" ref="username" placeholder="enter you username" />
-                <input type="password" ref="password" placeholder="enter password" />
+                <input type="text" ref="username" placeholder="enter you username" /><br />
+                <input type="password" ref="password" placeholder="enter password" /><br />
                 <input type="submit" value="Login" />
             </form>
         );
@@ -60,34 +60,4 @@ const style = {
     margin: 15,
 };
 
-class TextField extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            text: '',
-            type: ''
-        }
-    }
-    render() {
-        return (
-            <div>
-                <input></input>
-            </div>
-        )
-    }
-}
-class Button extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
-    render() {
-        return (
-            <div>
-                <button>Login</button>
-            </div>
-        )
-    }
-}
 export default Login;

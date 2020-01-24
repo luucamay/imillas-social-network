@@ -1,16 +1,33 @@
 import React from 'react';
 import axios from 'axios';
 
+const Muro = ({ user, onSignOut }) => {
+    return (
+        <div>
+            Bienvenido <strong>{user.username}</strong>!
+        <a href="javascript:;" onClick={onSignOut}>Sign out</a>
+        </div>
+    )
+}
+
 class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            logged: false
         }
         this.handleClick = this.handleClick.bind(this)
+        this.handleClick = this.handleSignIn.bind(this)
     }
-    
+
+    handleSignIn(event) {
+        event.preventDefault()
+        let username = this.state.username.value
+        let password = this.state.password.value
+        this.props.onSignIn(username, password)
+    }
     handleClick(event) {
         let apiBaseUrl = "http://localhost:8080/users/";
         // carga util, osea datos que vamos a enviar
@@ -24,6 +41,9 @@ class Login extends React.Component {
                 console.log(response);
                 if (response.data.code === 200) {
                     console.log("Login successfull");
+                    this.setState({
+                        logged: true
+                    });
                     // redirect to social media page! Or load social media page!!!
                 }
                 else if (response.data.code === 204) {
@@ -43,8 +63,9 @@ class Login extends React.Component {
         return (
             <form onSubmit={this.handleClick}>
                 <h1>Login</h1>
-                <input type="text" ref="username" placeholder="enter you username" /><br />
-                <input type="password" ref="password" placeholder="enter password" /><br />
+                <input type="text" username="username" placeholder="enter you username" /><br />
+                <input type="password" password="password" placeholder="enter password" /><br />
+                
                 <input type="submit" value="Login" />
             </form>
         );

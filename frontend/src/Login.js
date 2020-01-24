@@ -1,13 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-const Welcome = ({ user, onSignOut }) => {
-    return (
-        <div>
-            Bienvenida a mi red social <strong>{user.username}</strong>!
-        <a href="javascript:;" onClick={onSignOut}>Sign out</a>
-        </div>
-    )
-}
 
 class Login extends React.Component {
     constructor(props) {
@@ -20,19 +12,21 @@ class Login extends React.Component {
     }
     
     handleClick(event) {
-        let apiBaseUrl = "http://localhost:8080/api/login";
+        let apiBaseUrl = "http://localhost:8080/users/";
         // carga util, osea datos que vamos a enviar
         let payload = {
             "email": this.state.username,
             "password": this.state.password
         }
-        axios.post(apiBaseUrl + 'login', payload)
+        //axios.post(apiBaseUrl + 'login', payload)
+        axios.get(apiBaseUrl)
             .then(function (response) {
                 console.log(response);
-                if (response.data.code == 200) {
+                if (response.data.code === 200) {
                     console.log("Login successfull");
+                    // redirect to social media page! Or load social media page!!!
                 }
-                else if (response.data.code == 204) {
+                else if (response.data.code === 204) {
                     console.log("Username password do not match");
                     alert("username password do not match") // change this
                 }
@@ -56,8 +50,5 @@ class Login extends React.Component {
         );
     }
 }
-const style = {
-    margin: 15,
-};
 
 export default Login;

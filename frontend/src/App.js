@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import './Login.js'
 import Login from './Login.js';
-import Muro from './Login.js';
+import Muro from './Muro.js';
 
 class App extends React.Component {
   constructor(props) {

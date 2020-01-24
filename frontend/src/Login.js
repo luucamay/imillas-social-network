@@ -1,27 +1,15 @@
 import React from 'react';
 import axios from 'axios';
 
-const Muro = ({ user, onSignOut }) => {
-    return (
-        <div>
-            Bienvenido <strong>{user.username}</strong>!
-        <a href="javascript:;" onClick={onSignOut}>Sign out</a>
-        </div>
-    )
-}
-
 class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
-            password: '',
-            logged: false
+            user: null
         }
         this.handleClick = this.handleClick.bind(this)
         this.handleClick = this.handleSignIn.bind(this)
     }
-
     handleSignIn(event) {
         event.preventDefault()
         let username = this.state.username.value

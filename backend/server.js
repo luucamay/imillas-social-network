@@ -33,8 +33,8 @@ app.get('/users', function(req, res) {
   });
 });
 
-// GET a user (Accessed at GET http://localhosto:8080/users/user_id)
-app.get('/users/:id', function(req, res) {
+// GET a user (Accessed at GET http://localhosto:8080/users/username)
+app.get('/users/:email', function(req, res) {
 	  var user_id = req.params.id;
 	  db.findOne({
 		      _id: user_id

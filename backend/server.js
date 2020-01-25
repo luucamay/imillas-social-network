@@ -58,7 +58,7 @@ app.post('/login', function (req, res) {
 });
 
 // GET all users (Accessed at GET http://localhost:8080/users)
-app.get('/users', function(req, res) {
+app.get('/users', jwtCheck, function(req, res) {
   db.find({}).sort({
     updatedAt: -1
   }).exec(function(err, users) {

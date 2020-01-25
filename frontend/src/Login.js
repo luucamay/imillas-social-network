@@ -3,8 +3,8 @@ import axios from 'axios';
 
 const Login = () => {
     const [user, setUser] = useState({
-        email: '',
-        password: ''
+        email: 'lupe@gmail.com',
+        password: 'thisisapass'
     });
 
     const setEmail = (newValue) => {
@@ -46,13 +46,13 @@ const Login = () => {
             });
     }
     return (
-        <form onSubmit={login}>
-            <h1>Login</h1>
-            <input type="text" username="username" placeholder="enter you username" /><br />
-            <input type="password" password="password" placeholder="enter password" /><br />
-
-            <input type="submit" value="Login" />
-        </form>
+        <div className="App">
+            <h2>Email:</h2>
+            <input value={user.email} onChange={e=> setEmail(e.target.value)} type="text" /><br />
+            <h2>Password:</h2>
+            <input value={user.password} type="password" onChange={e=> setPassword(e.target.value)} /><br />
+            <input type="button" onClick={login} value="Login" />
+        </div>
     );
 }
 

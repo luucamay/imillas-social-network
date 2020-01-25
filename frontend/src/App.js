@@ -1,49 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import './Login.js'
 import Login from './Login.js';
 import Muro from './Muro.js';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      user: null
+const App = () => {
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    if(!localStorage.getItem('_TOKEN')){
+      // redirect to login
+    } else {
+      // redirect to muro
     }
-  }
-  logIn(username, password) {
-    // This is where you would call Firebase, an API etc...
-    // calling setState will re-render the entire app (efficiently!)
-    this.setState({
-      user: {
-        username,
-        password,
-      }
-    })
-  }
+  }, [])
+  return (
+    <div className="App">
+       <header className="App-header">
+        {
+          <p>Red Social</p>
+        }
+      </header>
+    </div>
+  )
 
-  logOut() {
-    this.setState({ user: null })
-  }
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          {
-            (this.state.user) ?
-              <Muro
-                user={this.state.user}
-                onSignOut={this.signOut}
-              />
-              :
-              <Login
-                onSignIn={this.signIn}
-              />
-          }
-        </header>
-      </div>
-    )
-  }
 }
 
 export default App;

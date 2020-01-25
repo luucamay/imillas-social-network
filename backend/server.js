@@ -43,7 +43,7 @@ app.post('/login', function (req, res) {
   }, {}, function (err, user) {
     if (err) return res.send(err);
     if (!user) {
-      res.json('Usuario no encontrado')
+      res.json('Usuario o password incorrectos')
     } else {
     const token = jwt.sign(
       {

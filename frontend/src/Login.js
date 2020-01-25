@@ -42,7 +42,7 @@ const Login = () => {
 
     const login = (event) => {
         event.preventDefault()
-        if (errorEmail != '' || errorPassword != ''){
+        if (errorEmail !== '' || errorPassword !== ''){
             return
         }
         const encrypted_pass = sha1(user.password);

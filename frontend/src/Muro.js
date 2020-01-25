@@ -7,7 +7,7 @@ const Muro = () => {
     if (!localStorage.getItem('_TOKEN')) {
       history.push('/login')
     }
-  }, [])
+  })
 
   return (
     <div className="App">

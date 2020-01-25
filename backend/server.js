@@ -2,7 +2,9 @@
 var express = require('express'),
   app = express(),
   bodyParser = require('body-parser'),
-  cors = require('cors');
+  cors = require('cors'),
+  expressjwt = require('express-jwt'),
+  jwt = require('jsonwebtoken');
 
 // SETUP
 var   port = Number(process.env.PORT || 8080);
@@ -12,8 +14,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
 // Set up cors
 app.use(cors());
+
+// Set up express-jwt
+const jwtCheck = expressjwt({
+  secret: "MiSecretito"
+});
 
 app.set('view engine', 'handlebars');
 
@@ -26,6 +34,7 @@ var db = new Datastore({
 });
 
 // ROUTES
+//
 // GET all users (Accessed at GET http://localhost:8080/users)
 app.get('/users', function(req, res) {
   db.find({}).sort({

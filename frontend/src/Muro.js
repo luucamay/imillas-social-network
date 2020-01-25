@@ -1,14 +1,18 @@
-import React from 'react';
-class Muro extends React.Component {
-    constructor(props) {
-      super(props);
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+
+const Muro = () => {
+  let history = useHistory();
+  useEffect(() => {
+    if (!localStorage.getItem('_TOKEN')) {
+      history.push('/login')
     }
-    render() {
-      return (
-        <div>
-            Bienvenido <strong>{this.props.user.username}</strong>!
+  }, [])
+
+  return (
+    <div>
+      Bienvenido <strong>{localStorage.getItem('username')}</strong>!
         </div>
-    );
-    }
-  };
-  export default Muro;
+  );
+};
+export default Muro;

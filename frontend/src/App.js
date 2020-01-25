@@ -1,24 +1,21 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import './Login.js'
-import Login from './Login.js';
-import Muro from './Muro.js';
+import { useHistory } from "react-router-dom";
 
 const App = () => {
-  
+  let history = useHistory();
   useEffect(() => {
     if(!localStorage.getItem('_TOKEN')){
-      // redirect to login
+      history.push('/login')
     } else {
-      // redirect to muro
+      history.push('/muro')
     }
   }, [])
   return (
     <div className="App">
        <header className="App-header">
-        {
-          <Login />
-        }
+        Red Social
       </header>
     </div>
   )

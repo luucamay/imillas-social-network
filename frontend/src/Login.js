@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
+    let history = useHistory();
     const [user, setUser] = useState({
         email: 'lupe@gmail.com',
         password: 'thisisapass'
@@ -22,15 +24,15 @@ const Login = () => {
     }
 
     const login = () => {
-        let apiBaseUrl = "http://localhost:8080";
+        let apiBaseUrl = 'http://localhost:8080';
         axios.post(apiBaseUrl + '/login', user)
             .then(function (response) {
                 console.log(response);
                 if (response.status === 200) {
-                    console.log("Login successfull");
+                    console.log('Login successfull');
                     localStorage.setItem('_TOKEN', response.data.token)
                     localStorage.setItem('username', response.data.username)
-                    // redirect to social media page! Or load social media page!!!
+                    history.push('/muro')
                 }
                 else if (response.status === 204) {
                     console.log("El usuario y la contrasenia no coinciden");

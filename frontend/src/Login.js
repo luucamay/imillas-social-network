@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import sha1 from 'sha1'
 
 const Login = () => {
     let history = useHistory();
@@ -44,8 +45,11 @@ const Login = () => {
         if (errorEmail != '' || errorPassword != ''){
             return
         }
+        const encrypted_pass = sha1(user.password);
+        let userObject = user;
+        userObject.password = encrypted_pass;
         let apiBaseUrl = 'http://localhost:8080';
-        axios.post(apiBaseUrl + '/login', user)
+        axios.post(apiBaseUrl + '/login', userObject)
             .then(function (response) {
                 console.log(response);
 
@@ -55,6 +59,8 @@ const Login = () => {
                         localStorage.setItem('_TOKEN', response.data.token)
                         localStorage.setItem('username', response.data.username)
                         history.push('/muro')
+                    } else {
+                        alert(response.data)
                     }
                 }
                 else {

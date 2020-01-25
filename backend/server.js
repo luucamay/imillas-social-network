@@ -34,7 +34,29 @@ var db = new Datastore({
 });
 
 // ROUTES
-//
+// POST login (Accessed at GET http://localhost:8080/login)
+app.post('/login', function (req, res) {
+  // TODO check email first then password
+  db.findOne({
+    email: req.body.email,
+    password: req.body.password
+  }, {}, function (err, user) {
+    if (err) return res.send(err);
+    if (!user) {
+      res.json('Usuario no encontrado')
+    }
+    const token = jwt.sign(
+      {
+        sub: 1, email: user.email
+      },
+      "miSecretito",
+      {
+        expiresIn: "3 hours"
+      });
+    res.status(200).json({token: token, username: user.username})
+  });
+});
+
 // GET all users (Accessed at GET http://localhost:8080/users)
 app.get('/users', function(req, res) {
   db.find({}).sort({

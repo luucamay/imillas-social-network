@@ -1,7 +1,8 @@
 // DEPENDENCIES
 var express = require('express'),
   app = express(),
-  bodyParser = require('body-parser');
+  bodyParser = require('body-parser'),
+  cors = require('cors');
 
 // SETUP
 var   port = Number(process.env.PORT || 8080);
@@ -11,6 +12,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+// Set up cors
+app.use(cors());
 
 app.set('view engine', 'handlebars');
 

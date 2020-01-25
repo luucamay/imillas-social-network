@@ -44,7 +44,7 @@ app.post('/login', function (req, res) {
     if (err) return res.send(err);
     if (!user) {
       res.json('Usuario no encontrado')
-    }
+    } else {
     const token = jwt.sign(
       {
         sub: 1, email: user.email
@@ -53,7 +53,7 @@ app.post('/login', function (req, res) {
       {
         expiresIn: "3 hours"
       });
-    res.status(200).json({token: token, username: user.username})
+    res.json({token: token, username: user.username})}
   });
 });
 

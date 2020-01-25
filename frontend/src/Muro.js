@@ -10,9 +10,11 @@ const Muro = () => {
   }, [])
 
   return (
-    <div>
-      Bienvenido <strong>{localStorage.getItem('username')}</strong>!
-        </div>
+    <div className="App">
+      <header className="App-header">
+        Bienvenidx <strong>{localStorage.getItem('username')}</strong>!
+      </header>
+    </div>
   );
 };
 export default Muro;

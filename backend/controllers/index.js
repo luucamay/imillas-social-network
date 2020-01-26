@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// Load the router module for goals.
+// Load the router module for users.
 router.use('/users', require('./users'))
 
 // Define the home page route.

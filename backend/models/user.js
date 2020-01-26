@@ -1,5 +1,14 @@
 const { dbUsers } = require('./db');
 
+// Login as a user to the database
+exports.login = function (email, password, callback) {
+    const user = {
+        email: email,
+        password: password
+    }
+    dbUsers.findOne(user).exec(callback)
+}
+
 // Insert a new user in the database and return its id.
 exports.create = function (username, email, password, callback) {
     const user = {

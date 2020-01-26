@@ -1,9 +1,37 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user')
+const User = require('../models/user');
+const expressjwt = require('express-jwt');
+const jwt = require('jsonwebtoken');
+
+const jwtCheck = expressjwt({
+    secret: "MiSecretito"
+});
 
 // ROUTES FOR THE USERS
 // =============================================================================
+// POST login (Accessed at GET http://localhost:8080/login)
+router.post('/login', function (req, res) {
+    const email = req.body.email;
+    const password = req.body.password;
+    User.login(email, password, function (err, user) {
+        if (err) return res.send(err);
+        if (!user) {
+            res.json('Usuario o password incorrectos')
+        } else {
+            const token = jwt.sign(
+                {
+                    sub: 1, email: user.email
+                },
+                "miSecretito",
+                {
+                    expiresIn: "3 hours"
+                });
+            res.json({ token: token, username: user.username })
+        }
+    });
+});
+
 // POST a new user
 // (accessed at POST http://localhost:8080/users)
 router.post('/', function (req, res) {
@@ -13,11 +41,11 @@ router.post('/', function (req, res) {
     User.create(username, email, password, function (err, user) {
         if (err) { res.send(err) }
         res.sendStatus(200);
-    })
-})
+    });
+});
 
 // GET all users (Accessed at GET http://localhost:8080/users)
-router.get('/', function (req, res) {
+router.get('/', jwtCheck, function (req, res) {
     User.all(function (err, users) {
         if (err) res.send(err);
         res.json(users);

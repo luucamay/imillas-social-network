@@ -49,7 +49,7 @@ const Login = () => {
         let userObject = user;
         userObject.password = encrypted_pass;
         let apiBaseUrl = 'http://localhost:8080';
-        axios.post(apiBaseUrl + '/login', userObject)
+        axios.post(apiBaseUrl + '/users/login', userObject)
             .then(function (response) {
                 console.log(response);
 

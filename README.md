@@ -20,3 +20,12 @@ Email: lupe@gmail.com
 
 Password: thisisapass
 
+### Probar los endpoints del backend:
+Opcion 1: http://64.225.127.76/posts
+
+Opcion 2: https://protected-journey-51580.herokuapp.com/posts
+
+En realidad he deployado en 2 diferentes lugares porque la aplicacion final no logra obtener los datos del endpoitn. Pienso que tiene que ver con la configuracion de los servidores del backend.
+
+Pueden probar los enpoints desde un cliente como postman o usar una terminal linux cualquiera para utilizar el comando curl. Para el uso de curl he puesto ejemplos en el archivo 'backend/curl_scripts.js'
+

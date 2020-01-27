@@ -10,7 +10,7 @@ const jwtCheck = expressjwt({
 
 // ROUTES FOR THE USERS
 // =============================================================================
-// POST login (Accessed at GET http://localhost:8080/login)
+// POST login (Accessed at GET http://localhost:8080/users/login)
 router.post('/login', function (req, res) {
     const email = req.body.email;
     const password = req.body.password;
@@ -45,7 +45,7 @@ router.post('/', function (req, res) {
 });
 
 // GET all users (Accessed at GET http://localhost:8080/users)
-router.get('/', jwtCheck, function (req, res) {
+router.get('/', function (req, res) {
     User.all(function (err, users) {
         if (err) res.send(err);
         res.json(users);

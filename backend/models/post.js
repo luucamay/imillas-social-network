@@ -36,8 +36,9 @@ exports.getOne = function (post_id, callback) {
 
 // Update a post.
 exports.update = function(post, callback){
+    console.log(post)
     dbPosts.update({
-        _id: post.post_id
+        _id: post._id
     }, post, {}, callback)
 }
 

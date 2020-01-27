@@ -7,10 +7,10 @@ const NuevaPublicacion = () => {
        content:'',
        type:'amigos'
     });
+    
     const handleInputChange = (event) => {
         const { name, value } = event.target
         setPublicacion({ ...publicacion, [name]: value })
-        
     }
     const publicar = (event) => {
         event.preventDefault();
@@ -44,7 +44,7 @@ const NuevaPublicacion = () => {
                     <option value="amigos">Amigos</option>
                     <option value="todo publico">Todo Publico</option>
                 </select>
-                <button onClick={publicar}>Publicar</button>
+                <button onClick={publicar} disabled={!publicacion.content}>Publicar</button>
             </div>
         </div>
     )

@@ -16,7 +16,13 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Set up cors
-app.use(cors());
+app.use(
+  cors({
+      credentials: true,
+      origin: true
+  })
+);
+app.options('*', cors());
 
 // Set up express-jwt
 const jwtCheck = expressjwt({

@@ -6,7 +6,7 @@ import NuevaPublicacion from './NuevaPublicacion.js';
 
 const Muro = () => {
   let history = useHistory();
-  let apiBaseUrl = 'https://imillasocial.herokuapp.com/';
+  let apiBaseUrl = 'http://64.225.127.76/';
   useEffect(() => {
     if (!localStorage.getItem('_TOKEN')) {
       history.push('/login')

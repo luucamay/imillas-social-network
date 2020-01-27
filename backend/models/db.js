@@ -10,7 +10,7 @@ var dbUsers = new Datastore({
 
 // Posts collection
 var dbPosts = new Datastore({
-    filename: 'collections.db', // provide a path to the database file
+    filename: 'posts.db', // provide a path to the database file
     autoload: true, // automatically load the database
     timestampData: true // automatically add and manage the fields createdAt and updatedAt
 });

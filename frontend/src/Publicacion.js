@@ -7,7 +7,7 @@ const Publicacion = (props) => {
         if (window.confirm('Estas seguro de que quieres eliminar este post?')) {
             console.log('eliminado')
             event.preventDefault();
-            let apiBaseUrl = 'http://localhost:8080';
+            let apiBaseUrl = 'https://imillasocial.herokuapp.com/';
             axios.delete(apiBaseUrl + '/posts/'+ props.publicacion._id)
                 .then(function (response) {
                     console.log(response);

@@ -21,7 +21,7 @@ const NuevaPublicacion = (props) => {
         }
         let publicacionObj = publicacion;
         publicacionObj.user_id = localStorage.getItem('user_id');
-        let apiBaseUrl = 'http://localhost:8080';
+        let apiBaseUrl = 'https://imillasocial.herokuapp.com/';
         axios.post(apiBaseUrl + '/posts/', publicacionObj)
             .then(function (response) {
                 console.log(response);

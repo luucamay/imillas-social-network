@@ -34,6 +34,7 @@ const Muro = () => {
         <h2>Publicaciones</h2>
         <div className="flex-row">
           <div className="flex-large">
+            <Publicacion publicacion={null}/>
             {publicaciones.length > 0 ? (
               publicaciones.map(publicacion => (
                 <Publicacion publicacion={publicacion} />))

@@ -81,5 +81,18 @@ En realidad he deployado en 2 diferentes lugares porque la aplicacion final no l
 
 Pueden probar los enpoints desde un cliente como postman o usar una terminal linux cualquiera para utilizar el comando curl. Para el uso de curl he puesto ejemplos en el archivo 'backend/curl_scripts.js'
 
+## Recursos utilizados
+- Create-react-app: https://create-react-app.dev/docs/importing-a-component
+- Revise el tutorial de login para ver que estructura le daba a mis archivos: https://medium.com/technoetics/create-basic-login-forms-using-create-react-app-module-in-reactjs-511b9790dede
+- He revisado algunas recomendaciones de laboratoria GDL: https://github.com/Laboratoria/GDL002-framework-social-network
+-Para el backend en nodeJS lo primero que he revisado un par de tutoriales:
+  -https://www.freecodecamp.org/news/building-a-node-js-application-on-android-part-1-termux-vim-and-node-js-dfa90c28958f/
+  -https://medium.com/free-code-camp/building-a-node-js-application-on-android-part-2-express-and-nedb-ced04caea7bb
+- Respecto al uso de hooks: https://www.taniarascia.com/crud-app-in-react-with-hooks/
+- Para usar axios, leí la documentación oficial en: https://github.com/axios/axios
+- También he leido documentaciones oficiales de paquetes oficiales de npm como: cors, sha1, react-router-dom, express-jwt, jsonwebtoken, y body-parser.
+
+
+
 
 

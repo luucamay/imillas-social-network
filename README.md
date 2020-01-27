@@ -10,7 +10,7 @@ Abrir [http://localhost:3000](http://localhost:3000) para ver en el navegador.
 La pagina cargará si tu editas cosas.<br />
 Tu tambien podrás ver los errores lint en la consola.
 
-## Instruccines de como probar la aplicacion en vivo:
+### Probar la aplicacion frontend:
 Probar la aplicacion en:
 https://luucamay-red-social.netlify.com/login
 

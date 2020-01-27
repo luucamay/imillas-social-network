@@ -26,17 +26,6 @@ const jwtCheck = expressjwt({
 // Use controllers.
 app.use(require('./controllers'))
 
-// PROD
-app.use(express.static(path.join(__dirname, '../frontend/build')))
-
-app.get('*', (_, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/build/index.html'), (err) => {
-    if (err) {
-      res.status(500).send(err)
-    }
-  })
-})
-
 // START THE SERVER
 app.listen(port, function() {
   console.log('Listening on port ' + port);

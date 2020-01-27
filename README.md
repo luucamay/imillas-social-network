@@ -1,5 +1,45 @@
 # Red social
 
+Red social tiene dos retos:
+- El primero es el login del usuario.
+- El segundo es mostrar posts creados por el usuario
+
+Solo en **modo desarrollo** funciona la llamada a los endpoints del frontend al backend.
+
+## Login
+El login cumple con los requerimientos solicitados:
+
+### Validaciones:
+1. El input de usuario debe ser requerido
+2. El input password debe ser requerido
+3. El nombre de usuario debe ser un correo válido
+4. Lo que tipeo en el input de password debe ser secreto
+5. Los mensajes de error deben aparecer en la parte inferior
+de los inputs
+### Comportamiento:
+1. Cuando presiono el botón login debe validarse el
+formulario en caso todo esté bien el sistema debe
+redireccionar a nuestro muro.
+2. En caso la validación falle debe mostrar los campos de
+error y no debe redireccionar al muro.
+3. El sistema debe tener una lista de usuarios válidos y sólo
+se podrá ingresar con esos usuarios. Cualquier otro
+campo debe decir que es un usuario inválido.
+4. Al entregar el proyecto, indicar el usuario con el que se
+puede hacer pruebas.
+
+## Muro
+El muro no se ha completado con todos los requerimientos solicitados, pero a continuacion listo los que si funcionan en modod desarrollo:
+### Validaciones:
+1. Al apretar el botón de publicar debe validar
+que exista texto en el input.
+### Comportamiento:
+1. Debo poder publicar un post
+2. Debo poder eliminar un post específico
+3. Debo poder filtrar los posts solo para mis
+amigos y para todo público
+4. Debe confirmar antes de eliminar un post
+
 ## Modo producion frontend:
 En el directorio del proyecto en la carpeta 'frontend', ejecuta:
 

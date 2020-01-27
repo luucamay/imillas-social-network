@@ -17,5 +17,6 @@ https://luucamay-red-social.netlify.com/login
 Con los credenciales:
 
 Email: lupe@gmail.com
+
 Password: thisisapass
 

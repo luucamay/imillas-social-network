@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import sha1 from 'sha1'
+import sha1 from 'sha1';
 
 const Login = () => {
     let history = useHistory();
@@ -58,6 +58,7 @@ const Login = () => {
                     if (response.data.token) {
                         localStorage.setItem('_TOKEN', response.data.token)
                         localStorage.setItem('username', response.data.username)
+                        localStorage.setItem('user_id', response.data.id)
                         history.push('/muro')
                     } else {
                         alert(response.data)

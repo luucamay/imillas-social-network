@@ -27,7 +27,7 @@ router.post('/login', function (req, res) {
                 {
                     expiresIn: "3 hours"
                 });
-            res.json({ token: token, username: user.username })
+            res.json({ token: token, username: user.username, id:user._id })
         }
     });
 });

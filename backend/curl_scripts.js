@@ -14,7 +14,7 @@ curl -X PUT -H "Content-Type: application/json" -d '{"categoria":"otra","descrip
 
 // REQUESTS POSTS
 // new post
-curl -X POST -H "Content-Type: application/json" -d '{"user_id":"PGbOfH0bseTsOtm3", "content":"this is a normal post", "type":"friends"}' http://localhost:8080/posts/
+curl -X POST -H "Content-Type: application/json" -d '{"user_id":"PGbOfH0bseTsOtm3", "content":"Hoy el Laucha tierniza un Matambre de Res en nuestro Horno Tromen y lo termina en la parrilla con unos agregados DELUXE por encima. <br> ¡Una combinación explosiva de sabores!", "type":"friends"}' http://localhost:8080/posts/
 // get all posts
 curl -X GET "http://localhost:8080/posts/"
 // get all posts by type

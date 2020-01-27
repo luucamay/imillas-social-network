@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import Publicacion from './Publicacion.js'
+import Publicacion from './Publicacion.js';
+import NuevaPublicacion from './NuevaPublicacion.js';
 
 const Muro = () => {
   let history = useHistory();
@@ -31,10 +32,10 @@ const Muro = () => {
     <div className="App">
       <header className="App-header">
         Hola <strong>{localStorage.getItem('username')}</strong>
-        <h2>Publicaciones</h2>
+        <h2>Tus publicaciones</h2>
         <div className="flex-row">
           <div className="flex-large">
-            <Publicacion publicacion={null}/>
+            <NuevaPublicacion />
             {publicaciones.length > 0 ? (
               publicaciones.map(publicacion => (
                 <Publicacion publicacion={publicacion} />))

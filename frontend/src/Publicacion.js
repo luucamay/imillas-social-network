@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
 
-
 const Publicacion = (props) => {
     const confirmarEliminar = (event) => {
         if (window.confirm('Estas seguro de que quieres eliminar este post?')) {
@@ -15,11 +14,7 @@ const Publicacion = (props) => {
 
     return (
         <div style={style}>
-            {(props.publicacion) ? (
-                <p>{props.publicacion.content}</p>                
-            ) : (
-                <textarea name="content" />
-            )}
+            <p>{props.publicacion.content}</p>
             <div style={{ textAlign: 'left' }}>
                 <button style={buttonStyle} onClick={editarPost}>Editar</button>&nbsp;
                 <button style={buttonStyle} onClick={confirmarEliminar}>Eliminar</button>
@@ -28,8 +23,10 @@ const Publicacion = (props) => {
     )
 }
 const style = {
+    textAlign: 'left',
     borderStyle: 'solid',
-    margin: 15
+    margin: 15,
+    padding: 15
 }
 const buttonStyle = {
     background: 'none',

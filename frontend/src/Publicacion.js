@@ -12,8 +12,8 @@ const Publicacion = (props) => {
                 .then(function (response) {
                     console.log(response);
                     if (response.status === 200){
+                        props.getPublicaciones()
                         console.log('Publicacion eliminada')
-                        // TODO refresh all publications
                     }
                 })
                 .catch(function (error) {

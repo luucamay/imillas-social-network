@@ -11,7 +11,7 @@ const App = () => {
     } else {
       history.push('/muro')
     }
-  })
+  }, [])
   return (
     <div className="App">
        <header className="App-header">

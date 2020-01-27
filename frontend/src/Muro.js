@@ -6,11 +6,12 @@ import NuevaPublicacion from './NuevaPublicacion.js';
 
 const Muro = () => {
   let history = useHistory();
+  let apiBaseUrl = 'http://localhost:8080';
   useEffect(() => {
     if (!localStorage.getItem('_TOKEN')) {
       history.push('/login')
     }
-  });
+  }, []);
 
   const [publicaciones, setPublicaciones] = useState([])
 
@@ -19,13 +20,25 @@ const Muro = () => {
   }, [])
 
   const getPublicaciones = async () => {
-    await axios.get('http://localhost:8080/posts')
+    await axios.get(apiBaseUrl + '/posts/')
       .then(response => {
         console.log(response.data)
         setPublicaciones(response.data)
       }).catch(error => {
         console.error(error)
       })
+  }
+
+  const getPublicacionesType = (type) => (event) => {
+    event.preventDefault();
+    axios.get(apiBaseUrl + '/posts/' + type)
+      .then(function (response) {
+        console.log(response);
+        setPublicaciones(response.data)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   return (
@@ -35,10 +48,14 @@ const Muro = () => {
         <h2>Tus publicaciones</h2>
         <div className="flex-row">
           <div className="flex-large">
-            <NuevaPublicacion />
+            <NuevaPublicacion getPublicaciones={getPublicaciones} />
+            <div>
+              <button style={buttonStyle} onClick={getPublicacionesType('publico')}>P&uacute;blico</button>&nbsp;
+              <button style={buttonStyle} onClick={getPublicacionesType('amigos')}>Amigos</button>
+            </div>
             {publicaciones.length > 0 ? (
               publicaciones.map(publicacion => (
-                <Publicacion publicacion={publicacion} />))
+                <Publicacion publicacion={publicacion} getPublicaciones={getPublicaciones} />))
             ) : (
                 <p>No hay publicaciones</p>
               )}
@@ -48,4 +65,13 @@ const Muro = () => {
     </div>
   );
 };
+
+const buttonStyle = {
+  background: 'none',
+  border: 'none',
+  padding: '0',
+  color: '#069',
+  textDecoration: 'underline'
+}
+
 export default Muro;

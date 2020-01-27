@@ -48,7 +48,8 @@ const Login = () => {
         const encrypted_pass = sha1(user.password);
         let userObject = user;
         userObject.password = encrypted_pass;
-        let apiBaseUrl = 'https://imillasocial.herokuapp.com/';
+        let apiBaseUrl = 'https://protected-journey-51580.herokuapp.com/';
+        debugger
         axios.post(apiBaseUrl + '/users/login', userObject)
             .then(function (response) {
                 console.log(response);

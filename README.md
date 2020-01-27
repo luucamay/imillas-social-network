@@ -1,12 +1,21 @@
 # Red social
 
-In the project directory 'frontend', you can run:
+En el directorio del proyecto en la carpeta 'frontend', ejecuta:
 
 ### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Eso hará que la aplicación se ejecute en modo de desarrollo. <br />
+Abrir [http://localhost:3000](http://localhost:3000) para ver en el navegador.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+La pagina cargará si tu editas cosas.<br />
+Tu tambien podrás ver los errores lint en la consola.
+
+## Instruccines de como probar la aplicacion en vivo:
+Probar la aplicacion en:
+https://luucamay-red-social.netlify.com/login
+
+Con los credenciales:
+
+Email: lupe@gmail.com
+Password: thisisapass
 

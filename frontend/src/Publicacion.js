@@ -1,10 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
+import axios from 'axios';
 
 const Publicacion = (props) => {
     const confirmarEliminar = (event) => {
         if (window.confirm('Estas seguro de que quieres eliminar este post?')) {
             console.log('eliminado')
+            event.preventDefault();
+            let apiBaseUrl = 'http://localhost:8080';
+            axios.delete(apiBaseUrl + '/posts/'+ props.publicacion._id)
+                .then(function (response) {
+                    console.log(response);
+                    if (response.status === 200){
+                        console.log('Publicacion eliminada')
+                        // TODO refresh all publications
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         }
     }
 

@@ -6,7 +6,7 @@ import NuevaPublicacion from './NuevaPublicacion.js';
 
 const Muro = () => {
   let history = useHistory();
-  let apiBaseUrl = 'http://64.225.127.76/';
+  let apiBaseUrl = 'http://64.225.127.76/api';
   useEffect(() => {
     if (!localStorage.getItem('_TOKEN')) {
       history.push('/login')

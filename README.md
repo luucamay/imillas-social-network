@@ -1,5 +1,14 @@
 # Red social
 
+Probar la aplicacion en:
+<a href="http://64.225.127.76/api/" target="_blank">http://64.225.127.76/</a>
+
+Con los credenciales:
+
+**Email: lupe@gmail.com**
+
+**Password: thisisapass**
+
 Red social tiene dos retos:
 - El primero es el login del usuario.
 - El segundo es mostrar posts creados por el usuario
@@ -59,19 +68,18 @@ El backend se encuentra en el directorio del proyecto en la carpeta 'backend', e
 Eso hará que la aplicación se ejecute en modo de desarrollo. <br />
 Abrir [http://localhost:8080](http://localhost:8080) para comprobar en el navegador que la aplicacion se esta ejecutando.
 
-
 ## Probar la aplicacion frontend en produccion:
 Probar la aplicacion en:
-http://64.225.127.76/
+<a href="http://64.225.127.76/api/" target="_blank">http://64.225.127.76/</a>
 
 Con los credenciales:
 
-Email: lupe@gmail.com
+**Email: lupe@gmail.com**
 
-Password: thisisapass
+**Password: thisisapass**
 
 ## Probar los endpoints del backend en produccion:
-Probar endpoints en: http://64.225.127.76/api/
+Probar endpoints en: <a href="http://64.225.127.76/api/" target="_blank">http://64.225.127.76/api/</a>
 
 Pueden probar los enpoints desde un cliente como postman o usar una terminal linux cualquiera para utilizar el comando curl. Para el uso de curl he puesto ejemplos en el archivo 'backend/curl_scripts.js'
 

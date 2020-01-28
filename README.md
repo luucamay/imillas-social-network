@@ -4,8 +4,6 @@ Red social tiene dos retos:
 - El primero es el login del usuario.
 - El segundo es mostrar posts creados por el usuario
 
-Solo en **modo desarrollo** funciona la llamada a los endpoints del frontend al backend.
-
 ## Login
 El login cumple con los requerimientos solicitados:
 

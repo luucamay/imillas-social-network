@@ -1,7 +1,7 @@
 # Red social
 
 Probar la aplicacion en:
-<a href="http://64.225.127.76/api/" target="_blank">http://64.225.127.76/</a>
+<a href="http://64.225.127.76/" target="_blank">este demo aquí</a>
 
 Con los credenciales:
 

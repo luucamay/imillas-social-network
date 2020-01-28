@@ -40,7 +40,7 @@ que exista texto en el input.
 amigos y para todo público
 4. Debe confirmar antes de eliminar un post
 
-## Modo producion frontend:
+## Modo desarrollo frontend:
 En el directorio del proyecto en la carpeta 'frontend', ejecuta:
 
 ### `npm install`
@@ -52,7 +52,7 @@ Abrir [http://localhost:3000](http://localhost:3000) para ver en el navegador.
 La pagina cargará si tu editas cosas.<br />
 Tu tambien podrás ver los errores lint en la consola.
 
-## Modo produccion backend:
+## Modo desarrollo backend:
 El backend se encuentra en el directorio del proyecto en la carpeta 'backend', ejecuta:
 
 ### `npm install`
@@ -64,7 +64,7 @@ Abrir [http://localhost:8080](http://localhost:8080) para comprobar en el navega
 
 ## Probar la aplicacion frontend en produccion:
 Probar la aplicacion en:
-https://luucamay-red-social.netlify.com/login
+http://64.225.127.76/
 
 Con los credenciales:
 
@@ -73,7 +73,7 @@ Email: lupe@gmail.com
 Password: thisisapass
 
 ## Probar los endpoints del backend en produccion:
-Opcion 1: http://64.225.127.76/posts
+Opcion 1: http://64.225.127.76/api/
 
 Pueden probar los enpoints desde un cliente como postman o usar una terminal linux cualquiera para utilizar el comando curl. Para el uso de curl he puesto ejemplos en el archivo 'backend/curl_scripts.js'
 

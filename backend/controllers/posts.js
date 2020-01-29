@@ -22,7 +22,8 @@ router.post('/', function (req, res) {
 
 // GET all the posts
 router.get('/', function (req, res) {
-    Post.all(function (err, posts) {
+    console.log(req);
+	Post.all(function (err, posts) {
         if (err) res.send(err);
         res.json(posts);
     })

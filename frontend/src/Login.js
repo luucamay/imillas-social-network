@@ -48,8 +48,7 @@ const Login = () => {
         const encrypted_pass = sha1(user.password);
         let userObject = user;
         userObject.password = encrypted_pass;
-        let apiBaseUrl = 'http://64.225.127.76';
-        debugger
+        let apiBaseUrl = 'http://64.225.127.76/api';
         axios.post(apiBaseUrl + '/users/login', userObject)
             .then(function (response) {
                 console.log(response);

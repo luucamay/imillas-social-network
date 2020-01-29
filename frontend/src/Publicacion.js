@@ -7,7 +7,7 @@ const Publicacion = (props) => {
         if (window.confirm('Estas seguro de que quieres eliminar este post?')) {
             console.log('eliminado')
             event.preventDefault();
-            let apiBaseUrl = 'http://64.225.127.76/';
+            let apiBaseUrl = 'http://64.225.127.76/api';
             axios.delete(apiBaseUrl + '/posts/'+ props.publicacion._id)
                 .then(function (response) {
                     console.log(response);

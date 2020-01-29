@@ -1,3 +1,4 @@
+#!/usr/bin/env nodejs
 // DEPENDENCIES
 var express = require('express'),
   app = express(),

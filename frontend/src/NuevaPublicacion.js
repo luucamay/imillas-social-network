@@ -21,7 +21,7 @@ const NuevaPublicacion = (props) => {
         }
         let publicacionObj = publicacion;
         publicacionObj.user_id = localStorage.getItem('user_id');
-        let apiBaseUrl = 'http://64.225.127.76/';
+        let apiBaseUrl = 'http://64.225.127.76/api';
         axios.post(apiBaseUrl + '/posts/', publicacionObj)
             .then(function (response) {
                 console.log(response);
